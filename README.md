@@ -1,4 +1,4 @@
-🟣 HECC-Engine: Dinamik Hamming ECC Analiz ve Görselleştirme Aracı
+##🟣 HECC-Engine: Dinamik Hamming ECC Analiz ve Görselleştirme Aracı
 HECC-Engine; Hamming Hata Düzeltme Kodlarını (ECC) 8-bit, 16-bit ve 32-bit mimariler üzerinde dinamik olarak simüle etmek, analiz etmek ve görselleştirmek için geliştirilmiş web tabanlı bir mühendislik aracıdır.
 
 Proje; donanım seviyesindeki karmaşık mantıksal işlemleri (XOR ağaç matrisleri, sendrom kelimesi analizi, Tek Bit Hata Düzeltme - SEC) modern, estetik ve interaktif bir kullanıcı arayüzü ile birleştirir.
