@@ -17,7 +17,7 @@ Yapay Hata Enjeksiyonu (Error Injection): Tek bitlik hata oluşturma (SEC) ve si
 Modern ve Estetik Arayüz: Kullanıcı deneyimine odaklanan özel pastel renk paleti ve duyarlı (responsive) tasarım.
 
 🚀 Canlı Demo 
-🌐 Canlı Web Demosu: (İsteğe bağlı: GitHub Pages bağlantısı)
+🌐 Canlı Web Demosu: https://leylaaksoy.github.io/Hamming-ECC-Analyzer/
 
 🛠️ Kullanılan Teknolojiler
 Ön Yüz (Frontend): HTML5, CSS3, JavaScript (ES6+)
