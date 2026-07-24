@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>HECC-Engine | Advanced Hamming ECC Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="step active" id="step1">01 // Veri Girişi</div>
+        <div class="step" id="step2">02 // Bellek Matrisi</div>
+        <div class="step" id="step3">03 // Hata Analizi</div>
+    </div>
+
+    <h1 class="main-title">HECC-Engine // Advanced Hamming ECC Analyzer</h1>
+
+    <div class="main-container">
+        
+        <div id="inputCard" class="card fade-in">
+            <div class="card-title">Veri Giriş Paneli (Data In)</div>
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="bitSelect">Mod Seçimi</label>
+                    <select id="bitSelect" onchange="inputPlaceholderGuncelle()">
+                        <option value="" disabled selected hidden>Mod Seçiniz</option>
+                        <option value="8">8 Bit Modu (M=8, K=4)</option>
+                        <option value="16">16 Bit Modu (M=16, K=5)</option>
+                        <option value="32">32 Bit Modu (M=32, K=6)</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="dataInput">Giriş Verisi (Binary)</label>
+                    <input type="text" id="dataInput" placeholder="Önce mod seçiniz..." maxlength="32" disabled>
+                </div>
+                <div class="control-group button-group">
+                    <button onclick="bellegeYaz()">Sistemi Çalıştır & Belleğe Yaz</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="summaryBar" class="summary-bar hidden">
+            <span><strong id="summaryModText">Aktif Donanım Durumu:</strong></span>
+            <span><strong>İşlenen Giriş Verisi (Data In):</strong> <span id="summaryData" class="code-font-small">00000000</span></span>
+            <button class="btn-reset" onclick="sistemiSifirla()">Reset & Yeni Veri</button>
+        </div>
+
+        <div id="dynamicSections" class="hidden">
+            
+            <div id="memoryCard" class="card fade-in">
+                <div class="card-title">Bellek Matrisi ve Hata Enjeksiyonu (Memory)</div>
+                <p class="info-text">Aşağıdaki hücreler parite bitleriyle birlikte verinin bellekteki gerçek dizilimidir. <b>Yapay bir donanım hatası simüle etmek için bir hücreye tıklayın:</b></p>
+                <div id="memoryContainer" class="memory-grid"></div>
+            </div>
+
+            <div id="analysisCard" class="card fade-in hidden">
+                <div class="card-title">Analizör ve Çıkış Paneli (Compare & Corrector)</div>
+                
+                <div class="result-display">
+                    <div class="result-item">
+                        <span class="result-label">Hata Sinyali (Error Signal):</span>
+                        <span id="errorSignal" class="signal-ok">HATA YOK</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Hesaplanan Sendrom (Syndrome Word):</span>
+                        <span id="syndromeWord" class="code-font">0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Donanım Teyit Durumu:</span>
+                        <span id="errorLocation" class="status-font">Sistem kararlı durumda.</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Temiz Veri Çıkışı (Data Out):</span>
+                        <span id="dataOut" class="code-font">-</span>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div>
+
+    <div class="avatar-container">
+        <div class="speech-bubble" id="avatarBubble">Selam! İstediğin bit modunu seçip veriyi girerek Hamming simülasyonunu başlatalım. 💖</div>
+        <img src="avatar.png" alt="Leyla" class="avatar-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
